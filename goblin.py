@@ -1,5 +1,4 @@
-import random
-
+from random import randint
 
 class Goblin:
     """A completed character class students can examine as an OOP example."""
@@ -11,7 +10,7 @@ class Goblin:
 
     def attack(self):
         """Return a random amount of damage."""
-        return random.randint(1, self.attack_power)
+        return randint(1, self.attack_power)
 
     def take_damage(self, damage):
         """Reduce health without allowing it to fall below zero."""
