@@ -1,7 +1,7 @@
 from goblin import Goblin
 from hero import Hero
 from time import sleep
-
+from boss import Boss
 ARENA_NAME = "The Golden Sphere"
 
 def battle(hero: Hero, enemy: Goblin):
@@ -12,10 +12,10 @@ def battle(hero: Hero, enemy: Goblin):
             enemy_damage = enemy.attack()
             hero.take_damage(enemy_damage)
 
-        if hero.is_alive():
-            print(f"{hero.name} wins!")
-        else:
-            print(f"{enemy.name} wins!")
+    if hero.is_alive():
+        print(f"{hero.name} wins!")
+    else:
+        print(f"{enemy.name} wins!")
 
 def main():
     """Open the arena and introduce its first opponent."""
@@ -23,6 +23,7 @@ def main():
     print("༼ ᓄºل͟º ༽ᓄ   ᕦ(ò_óˇ)ᕤ")
     print("The gates are opening...")
 
+    boss = Boss("Dr. Brown")
     badguy = Goblin("George")
     badguy2 = Goblin("Harold")
     print(f"{badguy.name} enters the arena with {badguy.health} health.")
@@ -41,6 +42,10 @@ def main():
     sleep(0.5)
     print(f"{coolguy.name} attackes {badguy.name}!")
     battle(coolguy, badguy)
+    print(f"{coolguy.name} attackes {badguy2.name}!")
+    battle(coolguy, badguy2)
+    boss.introduction()
+    battle(coolguy, boss)
 
 if __name__ == "__main__":
     main()

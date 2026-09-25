@@ -20,6 +20,7 @@ class Hero:
     def is_alive(self):
         # Return a Boolean based on this Hero's health.
         return self.health > 0
+    
     def battle_cry(self):
         # Returns a randomly generated battle cry.
         choosingPhrase = randint(1,4)
